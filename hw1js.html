@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- Здесь ошибок нет !-->
+<html> <!-- Здесь ошибок нет !-->
+<head>
+<title>HTML</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<script>
+
+function quickSort(items, left, right) {
+    var i=left;
+    var j=right;
+    if (items.length > 1) {
+        var pivot   = items[Math.floor((right + left) / 2)];
+
+    while (i <= j) {
+        while (items[i] < pivot) {
+            i++;
+        }
+        while (items[j] > pivot) {
+            j--;
+        }
+        if (i <= j) {
+                var temp = items[i];
+                items[i] = items[j];
+                items[j] = temp;
+            i++;
+            j--;
+        }
+    }
+        if (left < i - 1) {
+            quickSort(items, left, i - 1);
+        }
+        if (i < right) {
+            quickSort(items, i, right);
+        }
+    }
+    return items;
+}
+var mas=[43,2,21,5,67,3,4];
+console.log(quickSort(mas, 0, mas.length-1));
+</script>
+</body>
+</html>
