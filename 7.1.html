@@ -15,10 +15,12 @@ var user = {
 };
 function format(beginMsg, endMsg) {
    console.log(beginMsg + this.name + endMsg);
-}
+};
 //var tomFormat = format.bind(user);// Ваш код
-var tomFormat = user.format();
+var tomFormat = function(){//
+}
 tomFormat("<<<", ">>>"); // "<<<Tom>>>"
+
 </script>
 </body>
 </html>
