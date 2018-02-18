@@ -1,0 +1,37 @@
+<!DOCTYPE html> <!-- Здесь ошибок нет !-->
+<html> <!-- Здесь ошибок нет !-->
+<head>
+<title>HTML</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<script>
+function Summator(){
+    var _firstNumber = 0;
+    var _secondNumber = 0;
+    this.result = 0;
+    function validNumber(firstNumber, secondNumber){
+        if (typeof (firstNumber) === "number" && typeof (secondNumber) === "number"){
+            _firstNumber = firstNumber;
+            _secondNumber = secondNumber;
+        }
+    }
+    this.calc = function(firstNumber,secondNumber){
+        return this.result = firstNumber + secondNumber;
+    }
+    this.setGetSum = function(firstNumber,secondNumber){
+        if (firstNumber === undefined && secondNumber === undefined){
+            return this.result;
+        }
+        else{
+            validNumber(firstNumber, secondNumber);
+            this.calc(_firstNumber, _secondNumber);
+        }
+    }
+}
+var sum = new Summator();
+console.log(sum.setGetSum(5,3));
+
+</script>
+</body>
+</html>
