@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- Здесь ошибок нет !-->
+<html> <!-- Здесь ошибок нет !-->
+<head>
+<title>HTML</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<script>
+/*Расширьте тип объектов Array методом sortDesc(), который сортирует массив
+по убыванию.
+// Ваш код
+var arr = [5, 1, 4, 2, 3];
+arr.sortDesc();
+console.log(arr); // [5, 4, 3, 2, 1]*/
+Array.prototype.sortDesc = function sortDesc(){
+	var arr = [];
+	for( var k = 0; k < this.length; k++){
+		arr.push(this[k]);
+	}
+
+	for( var i = 0; i < arr.length; i++){
+		for (var j = i+1; j<arr.length; j++){
+			if(arr[i] < arr[j]){
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+			}
+		}
+
+	}
+
+	return arr;
+}
+
+var arr = [5, 1, 4, 2, 3];
+arr.sortDesc();
+console.log(arr);
+
+
+</script>
+</body>
+</html>
